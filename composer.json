@@ -1,0 +1,29 @@
+{
+    "name": "ppeerit/think-auth",
+    "type": "library",
+    "description": "Library for tp5 auth",
+    "keywords": ["auth"],
+    "homepage": "https://github.com/ppeerit/think-auth",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Chen Ze Wei",
+            "email": "549226266@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Ppeerit\\Auth\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ppeerit\\Auth\\": "tests/"
+        }
+    }
+}
