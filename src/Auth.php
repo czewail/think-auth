@@ -210,14 +210,14 @@ class Auth
     }
 
     /**
-     * 获得用户资料,根据自己的情况读取数据库
+     * 获得需要授权表资料,根据自己的情况读取数据库
      */
     protected function getAuthTableInfo($authid)
     {
-        static $userinfo = [];
-        if (!isset($userinfo[$authid])) {
-            $userinfo[$authid] = Db::name($this->_config['auth_user'])->where([$this->_config['auth_pk'] => $authid])->find();
+        static $authTableInfo = [];
+        if (!isset($authTableInfo[$authid])) {
+            $authTableInfo[$authid] = Db::name($this->_config['auth_table'])->where([$this->_config['auth_pk'] => $authid])->find();
         }
-        return $userinfo[$authid];
+        return $authTableInfo[$authid];
     }
 }
