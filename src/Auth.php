@@ -141,8 +141,8 @@ class Auth
         $user_groups = Db::name($this->_config['auth_group_access'])
             ->alias('a')
             ->join($this->_config['auth_group'] . " g", "g.id=a.group_id")
-            ->where("a.{$this->_config['auth_pk']}='$authid' and g.status='1'")
-            ->field("{$this->_config['auth_pk']},group_id,title,rules")->select();
+            ->where("a.authid='$authid' and g.status='1'")
+            ->field("authid,group_id,title,rules")->select();
         $groups[$authid] = $user_groups ? $user_groups : [];
         return $groups[$authid];
     }
